@@ -1,17 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="w-full flex justify-between items-center font-semibold">
         {/* back & forth */}
         <div className="flex items-center gap-2">
-          <img
+          <img onClick={() => navigate(-1)}
             src={assets.arrow_left}
             alt="left-arrow"
             className="w-7 bg-black p-2 rounded-2xl cursor-pointer"
           />
-          <img
+          <img onClick={() => navigate(+1)}
             src={assets.arrow_right}
             alt="right-arrow"
             className="w-7 bg-black p-2 rounded-2xl cursor-pointer"
